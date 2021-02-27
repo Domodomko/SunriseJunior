@@ -119,10 +119,7 @@ def sign_in_view(request):
 
 def sign_out_view(request):
     logout(request)
-    return HttpResponse(
-        json.dumps({"Success": "You are logged out!"}),
-        content_type="application/json"
-    )
+    return redirect(reverse('categories'))
 
 
 def sign_up_view(request):
