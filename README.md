@@ -13,7 +13,7 @@ A Django app with product catalog and authorization, made as a test task for a J
 
 ## Link Structure
 
-Here's some kind of documentation for this app:
+Here's some kind of documentation for this app:  
 The Main Page has products categories and subcategories on it
 
 - /user - User Profile Update
