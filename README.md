@@ -14,20 +14,19 @@ A Django app with product catalog and authorization, made as a test task for a J
 ## Link Structure
 
 Here's some kind of documentation for this app:
+The Main Page has products categories and subcategories on it
 
-- /admin - Admin panel
-- /api - API part of the App
-    - /signup - Sign Up
-    - /signin - Sign In
-    - /user - User Profile Update
 - /user - User Profile Update
 - /signin - Sign In
 - /signout - Sign Out
 - /signup - Sign Up
-- /products - Products part of the App
-    - /products - Products List
-    - /categories - Categories List
-    - /products/<pk> - Product Page
+- /products - Products List
+- /products/<pk> - Product Page
+- /api - API part of the App
+    - /signup - Sign Up
+    - /signin - Sign In
+    - /user - User Profile Update
+- /admin - Admin panel
 
 
 ## Installation
