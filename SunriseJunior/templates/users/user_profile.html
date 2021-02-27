@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Info</title>
+</head>
+<body>
+    <form id="form">
+        <input type="text" id="first_name" placeholder="{{ user.first_name }}">
+        <input type="text" id="last_name"  placeholder="{{ user.last_name }}">
+        <a data-callback='onSubmit' id="button" data-action='submit' href="">Update</a>
+    </form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript">
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+
+$("#button").on("click", function(event) {
+    event.preventDefault();
+    send_mail();
+    console.log(getCookie('csrftoken'));
+});
+function send_mail() {
+        var arr = {
+                first_name : $('#first_name').val(),
+                last_name:  $('#last_name').val(),
+            };
+        console.log(JSON.stringify(arr));
+        $.ajax({
+            type : 'POST',
+            url : "/user_update/",
+            headers: { "X-CSRFToken": getCookie('csrftoken') },
+            data : arr,
+            async: false,
+            dataType: 'json',
+
+            success : function(json) {
+                $('#first_name').attr("placeholder", $('#first_name').val());
+                $('#first_name').val($('#first_name').val());
+                $('#last_name').attr("placeholder", $('#last_name').val());
+                $('#last_name').val($('#last_name').val());
+                $('#message').remove();
+                $('#form').append("<div id='message'>User info has been updated!</div>");
+            },
+
+            error : function(xhr,errmsg,err) {
+                $('#message').remove();
+                $('#form').append("<div id='message'>Something went wrong. Try again please.</div>");
+            }
+        });
+}
+</script>
+</html>
