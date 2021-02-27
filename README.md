@@ -31,13 +31,27 @@ Here's some kind of documentation for this app:
 
 ## Installation
 ##### *This instruction is written for Linux users*
-
-After pushing this repository, you'll need to create new python venv for it and install requirements:
+After pushing this repository and creating your DB on Postgre, you'll need to create new python venv for it and install requirements:
 
 ```sh
 python3 -m venv /venv
 pip install -r requirements.txt
 ```
+Create settings .env file with these variables inside:
+- DEBUG
+- SECRET_KEY
+- DATABASE_URL
+- DB_NAME
+- DB_USER
+- DB_PASSWORD
+- DB_HOST
+- DB_PORT
+- EMAIL_HOST
+- EMAIL_PORT
+- EMAIL_HOST_USER
+- EMAIL_HOST_PASSWORD
+- EMAIL_BACKEND
+
 
 After that you'll need to migrate the data, create a superuser and run the application:
 
