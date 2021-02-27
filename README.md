@@ -8,6 +8,7 @@ A Django app with product catalog and authorization, made as a test task for a J
 
 - The task was written in 2 days, most of the time was spent learning jQuery and Ajax
 - I write API and native Django application together for the first time. It was an interesting experience
+- I chose confirmation by mail for authorization,, but I'm also familiar with FireBase
 
 
 ## Link Structure
