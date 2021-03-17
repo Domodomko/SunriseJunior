@@ -9,6 +9,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = 'Category'
+        verbose_name_plural = 'Categories'
+
 
 class SubCategory(models.Model):
     name = models.CharField('Name', max_length=100, default='')
@@ -16,6 +20,10 @@ class SubCategory(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'SubCategory'
+        verbose_name_plural = 'SubCategories'
 
 
 class Product(models.Model):
@@ -25,3 +33,7 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name = 'Product'
+        verbose_name_plural = 'Products'
