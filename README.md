@@ -28,6 +28,8 @@ Here's some kind of documentation for this app:
     - **/signin** - Sign In
     - **/user** - User Profile Update
 - **/admin** - Admin panel
+- **/swagger** - Swagger API Page
+- **/redoc** - Redoc API Page
 
 
 ## Installation
